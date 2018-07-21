@@ -49,22 +49,22 @@
 	 */
 
 	var constants = Object.freeze({
-			type: '',	// Either 'oauth' or 'oauth2'
-			name: '',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
+			type: 'oauth2',	// Either 'oauth' or 'oauth2'
+			name: 'ustoshop',	// Something unique to your OAuth provider in lowercase, like "github", or "nodebb"
 			oauth: {
-				requestTokenURL: '',
-				accessTokenURL: '',
-				userAuthorizationURL: '',
+				requestTokenURL: 'https://account.test.ustoshop.com/cas/oauth2.0/authorize',
+				accessTokenURL: 'https://account.test.ustoshop.com/cas/oauth2.0/accessToken',
+				userAuthorizationURL: 'https://account.test.ustoshop.com/cas/oauth2.0/profile',
 				consumerKey: nconf.get('oauth:key'),	// don't change this line
 				consumerSecret: nconf.get('oauth:secret'),	// don't change this line
 			},
 			oauth2: {
-				authorizationURL: '',
-				tokenURL: '',
+				authorizationURL: 'https://account.test.ustoshop.com/cas/oauth2.0/authorize',
+				tokenURL: 'https://account.test.ustoshop.com/cas/oauth2.0/accessToken',
 				clientID: nconf.get('oauth:id'),	// don't change this line
 				clientSecret: nconf.get('oauth:secret'),	// don't change this line
 			},
-			userRoute: ''	// This is the address to your app's "user profile" API endpoint (expects JSON)
+			userRoute: 'https://account.test.ustoshop.com/cas/oauth2.0/profile'	// This is the address to your app's "user profile" API endpoint (expects JSON)
 		}),
 		configOk = false,
 		OAuth = {}, passportOAuth, opts;
