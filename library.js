@@ -47,6 +47,8 @@
 	 *
 	 *   `OAUTH__ID=someoauthid OAUTH__SECRET=youroauthsecret node app.js`
 	 */
+	
+	  nconf.argv().env().file({ file: 'config.json' });
 
 	var constants = Object.freeze({
 			type: 'oauth2',	// Either 'oauth' or 'oauth2'
